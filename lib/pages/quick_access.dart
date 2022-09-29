@@ -11,10 +11,13 @@ class QuickAccess extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            const Text(
-              'Quick Access',
-              style: TextStyle(
-                fontSize: 17,
+            const Padding(
+              padding: EdgeInsets.symmetric(vertical: 25),
+              child: Text(
+                'Quick Access',
+                style: TextStyle(
+                  fontSize: 18,
+                ),
               ),
             ),
             IconButton(onPressed: () {}, icon: const Icon(Icons.more_vert))
@@ -25,11 +28,14 @@ class QuickAccess extends StatelessWidget {
           crossAxisCount: 4,
           children: [
             Column(
-              children: const [
-                CircleAvatar(
-                  backgroundImage: AssetImage('images/results.png'),
+              children: [
+                GestureDetector(
+                  onTap: () {},
+                  child: const CircleAvatar(
+                    backgroundImage: AssetImage('images/results.png'),
+                  ),
                 ),
-                Text('Results'),
+                const Text('Results'),
               ],
             ),
             Column(

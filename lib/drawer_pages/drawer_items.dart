@@ -28,7 +28,7 @@ class DrawerItems extends StatelessWidget {
         ),
         ListTile(
           leading: const Icon(Icons.check_box_sharp, color: Colors.black),
-          title: const Text('Home'),
+          title: const Text('Results'),
           onTap: () {},
           minLeadingWidth: 10,
         ),
