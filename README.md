@@ -1,4 +1,4 @@
-# flutter_application_3
+# KNUST AIM APP Flutter Application
 
 A new Flutter project.
 
