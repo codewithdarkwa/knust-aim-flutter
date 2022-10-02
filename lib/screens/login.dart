@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_3/pages/home.dart';
+import 'package:flutter_application_3/screens/reference.dart';
 
 class Login extends StatefulWidget {
   const Login({Key? key}) : super(key: key);
@@ -19,25 +19,34 @@ class _LoginState extends State<Login> {
         child: Column(
           children: [
             Stack(
+              clipBehavior: Clip.none,
               children: [
                 Container(
                   width: screenWidth,
                   height: screenHeight / 3,
                   color: const Color.fromARGB(255, 123, 17, 17),
                 ),
+                Padding(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 150, vertical: 20),
+                  child: SizedBox(
+                    width: 150,
+                    child: Image.asset('images/aim.png'),
+                  ),
+                ),
                 const Positioned(
-                  top: 100,
-                  left: 120,
+                  top: 150,
+                  left: 150,
                   child: CircleAvatar(
                       backgroundImage: AssetImage('images/John.png'),
                       radius: 60),
                 )
               ],
             ),
-            Padding(
-              padding: const EdgeInsets.all(25),
-              child: TextFormField(
-                decoration: const InputDecoration(
+            const Padding(
+              padding: EdgeInsets.all(25),
+              child: TextField(
+                decoration: InputDecoration(
                   border: UnderlineInputBorder(),
                   labelText: 'Enter your student ID number',
                   alignLabelWithHint: true,
@@ -54,34 +63,35 @@ class _LoginState extends State<Login> {
               ),
               onPressed: () {
                 Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => const Home()));
+                    MaterialPageRoute(builder: (context) => const Reference()));
               },
               child: const Text('Next'),
             ),
             Expanded(
               child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.end,
-                  children: const [
-                    CircleAvatar(
-                      backgroundImage: AssetImage('images/results.png'),
-                    ),
-                    CircleAvatar(
-                      backgroundImage: AssetImage('images/notification.png'),
-                    ),
-                    CircleAvatar(
-                      backgroundImage: AssetImage('images/fees.png'),
-                    ),
-                    CircleAvatar(
-                      backgroundImage: AssetImage('images/profile.png'),
-                    ),
-                    CircleAvatar(
-                      backgroundImage: AssetImage('images/registration.png'),
-                    ),
-                    CircleAvatar(
-                      backgroundImage: AssetImage('images/slip.png'),
-                    ),
-                  ]),
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: const [
+                  CircleAvatar(
+                    backgroundImage: AssetImage('images/results.png'),
+                  ),
+                  CircleAvatar(
+                    backgroundImage: AssetImage('images/notification.png'),
+                  ),
+                  CircleAvatar(
+                    backgroundImage: AssetImage('images/fees.png'),
+                  ),
+                  CircleAvatar(
+                    backgroundImage: AssetImage('images/profile.png'),
+                  ),
+                  CircleAvatar(
+                    backgroundImage: AssetImage('images/registration.png'),
+                  ),
+                  CircleAvatar(
+                    backgroundImage: AssetImage('images/slip.png'),
+                  ),
+                ],
+              ),
             ),
           ],
         ),

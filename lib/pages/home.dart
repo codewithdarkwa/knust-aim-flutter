@@ -5,6 +5,7 @@ import 'package:flutter_application_3/pages/contact.dart';
 import 'package:flutter_application_3/pages/my_slider.dart';
 import 'package:flutter_application_3/pages/news_feed.dart';
 import 'package:flutter_application_3/pages/quick_access.dart';
+import 'package:flutter_application_3/screens/login.dart';
 
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);
@@ -21,7 +22,17 @@ class Home extends StatelessWidget {
             'images/logo.png',
             scale: 5,
           ),
-          const Icon(Icons.more_vert),
+          IconButton(
+            icon: const Icon(Icons.more_vert),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const Login(),
+                ),
+              );
+            },
+          ),
         ],
       ),
       body: ListView(
