@@ -5,11 +5,13 @@ class Profile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double screenHeight = MediaQuery.of(context).size.height;
-    double screenWidth = MediaQuery.of(context).size.width;
-
-    return const Scaffold(
-      body: SafeArea(
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Profile'),
+        centerTitle: true,
+        backgroundColor: const Color.fromARGB(255, 123, 17, 17),
+      ),
+      body: const SafeArea(
         child: Center(
           child: Text('Profile page'),
         ),
