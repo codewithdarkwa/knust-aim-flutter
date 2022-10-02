@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_3/pages/home.dart';
 
 class DrawerItems extends StatelessWidget {
   const DrawerItems({Key? key}) : super(key: key);
@@ -10,7 +11,12 @@ class DrawerItems extends StatelessWidget {
         ListTile(
           leading: const Icon(Icons.home, color: Colors.black),
           title: const Text('Home'),
-          onTap: () {},
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const Home()),
+            );
+          },
           minLeadingWidth: 10,
         ),
         ListTile(
@@ -18,7 +24,6 @@ class DrawerItems extends StatelessWidget {
           title: const Text('Profile'),
           onTap: () {},
           minLeadingWidth: 10,
-          minVerticalPadding: 10,
         ),
         ListTile(
           leading: const Icon(Icons.receipt, color: Colors.black),
