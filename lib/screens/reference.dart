@@ -78,32 +78,32 @@ class _ReferenceState extends State<Reference> {
               },
               child: const Text('Verify'),
             ),
-            // Expanded(
-            //   child: Row(
-            //     mainAxisAlignment: MainAxisAlignment.center,
-            //     crossAxisAlignment: CrossAxisAlignment.end,
-            //     children: const [
-            //       CircleAvatar(
-            //         backgroundImage: AssetImage('images/results.png'),
-            //       ),
-            //       CircleAvatar(
-            //         backgroundImage: AssetImage('images/notification.png'),
-            //       ),
-            //       CircleAvatar(
-            //         backgroundImage: AssetImage('images/fees.png'),
-            //       ),
-            //       CircleAvatar(
-            //         backgroundImage: AssetImage('images/profile.png'),
-            //       ),
-            //       CircleAvatar(
-            //         backgroundImage: AssetImage('images/registration.png'),
-            //       ),
-            //       CircleAvatar(
-            //         backgroundImage: AssetImage('images/slip.png'),
-            //       ),
-            //     ],
-            //   ),
-            // ),
+            Expanded(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: const [
+                  CircleAvatar(
+                    backgroundImage: AssetImage('images/results.png'),
+                  ),
+                  CircleAvatar(
+                    backgroundImage: AssetImage('images/notification.png'),
+                  ),
+                  CircleAvatar(
+                    backgroundImage: AssetImage('images/fees.png'),
+                  ),
+                  CircleAvatar(
+                    backgroundImage: AssetImage('images/profile.png'),
+                  ),
+                  CircleAvatar(
+                    backgroundImage: AssetImage('images/registration.png'),
+                  ),
+                  CircleAvatar(
+                    backgroundImage: AssetImage('images/slip.png'),
+                  ),
+                ],
+              ),
+            ),
           ],
         ),
       ),

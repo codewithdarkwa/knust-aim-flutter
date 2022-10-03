@@ -9,6 +9,8 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
+  final _formKey = GlobalKey<FormState>();
+
   @override
   Widget build(BuildContext context) {
     double screenHeight = MediaQuery.of(context).size.height;
@@ -42,30 +44,10 @@ class _LoginState extends State<Login> {
                 ),
               ],
             ),
-            const Padding(
-              padding:
-                  EdgeInsets.only(left: 30, right: 30, top: 70, bottom: 30),
-              child: TextField(
-                decoration: InputDecoration(
-                  border: UnderlineInputBorder(),
-                  labelText: 'Enter your student ID number',
-                  alignLabelWithHint: true,
-                ),
-              ),
-            ),
-            ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                primary: const Color.fromARGB(255, 123, 17, 17),
-                padding: const EdgeInsets.symmetric(horizontal: 45),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(30),
-                ),
-              ),
-              onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => const Reference()));
-              },
-              child: const Text('Next'),
+            Padding(
+              padding: const EdgeInsets.only(
+                  left: 30, right: 30, top: 70, bottom: 30),
+              child: LoginForm(formKey: _formKey),
             ),
             Expanded(
               child: Row(
@@ -95,6 +77,61 @@ class _LoginState extends State<Login> {
             ),
           ],
         ),
+      ),
+    );
+  }
+}
+
+class LoginForm extends StatelessWidget {
+  const LoginForm({
+    Key? key,
+    required GlobalKey<FormState> formKey,
+  })  : _formKey = formKey,
+        super(key: key);
+
+  final GlobalKey<FormState> _formKey;
+
+  @override
+  Widget build(BuildContext context) {
+    return Form(
+      key: _formKey,
+      child: Column(
+        children: [
+          TextFormField(
+            validator: (value) {
+              if (value == null || value.isEmpty) {
+                return 'Required filled missing';
+              }
+              return null;
+            },
+            decoration: const InputDecoration(
+              border: UnderlineInputBorder(),
+              labelText: 'Enter your student ID number',
+              alignLabelWithHint: true,
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 12.0),
+            child: ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                primary: const Color.fromARGB(255, 123, 17, 17),
+                padding: const EdgeInsets.symmetric(horizontal: 45),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(30),
+                ),
+              ),
+              onPressed: () {
+                if (_formKey.currentState!.validate()) {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const Reference()),
+                  );
+                }
+              },
+              child: const Text('Next'),
+            ),
+          ),
+        ],
       ),
     );
   }

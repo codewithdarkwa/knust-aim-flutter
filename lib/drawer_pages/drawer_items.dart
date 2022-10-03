@@ -64,7 +64,7 @@ class DrawerItems extends StatelessWidget {
         ),
         CustomListTile(
           title: "Profile",
-          icon: Icons.person,
+          icon: Icons.help,
           page: Help(),
         ),
       ],
