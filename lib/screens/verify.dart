@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_3/screens/verify.dart';
+import 'package:flutter_application_3/pages/home.dart';
 
-class Login extends StatefulWidget {
-  const Login({Key? key}) : super(key: key);
+class Verify extends StatefulWidget {
+  const Verify({Key? key}) : super(key: key);
 
   @override
-  State<Login> createState() => _LoginState();
+  State<Verify> createState() => _VerifyState();
 }
 
-class _LoginState extends State<Login> {
+class _VerifyState extends State<Verify> {
   final _formKey = GlobalKey<FormState>();
 
   @override
@@ -36,18 +36,21 @@ class _LoginState extends State<Login> {
                   ),
                 ),
                 Positioned(
-                  top: screenWidth * 0.35,
+                  top: screenWidth * 0.4,
                   left: 150,
                   child: const CircleAvatar(
-                      backgroundImage: AssetImage('images/avatar.jpg'),
+                      backgroundImage: AssetImage('images/John.png'),
                       radius: 60),
-                ),
+                )
               ],
             ),
             Padding(
               padding: const EdgeInsets.only(
-                  left: 30, right: 30, top: 70, bottom: 30),
-              child: LoginForm(formKey: _formKey),
+                left: 30,
+                right: 30,
+                top: 25,
+              ),
+              child: VerifyForm(formKey: _formKey),
             ),
             Expanded(
               child: Row(
@@ -82,15 +85,13 @@ class _LoginState extends State<Login> {
   }
 }
 
-class LoginForm extends StatelessWidget {
-  const LoginForm({
+class VerifyForm extends StatelessWidget {
+  const VerifyForm({
     Key? key,
     required GlobalKey<FormState> formKey,
   })  : _formKey = formKey,
         super(key: key);
-
   final GlobalKey<FormState> _formKey;
-
   @override
   Widget build(BuildContext context) {
     return Form(
@@ -104,15 +105,28 @@ class LoginForm extends StatelessWidget {
               }
               return null;
             },
-            keyboardType: TextInputType.number,
             decoration: const InputDecoration(
               border: UnderlineInputBorder(),
-              labelText: 'Enter your student ID number',
+              labelText: 'Username',
+              alignLabelWithHint: true,
+            ),
+          ),
+          TextFormField(
+            validator: (value) {
+              if (value == null || value.isEmpty) {
+                return 'Required field missing';
+              }
+              return null;
+            },
+            obscureText: true,
+            decoration: const InputDecoration(
+              border: UnderlineInputBorder(),
+              labelText: 'Password',
               alignLabelWithHint: true,
             ),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(vertical: 12.0),
+            padding: const EdgeInsets.symmetric(vertical: 10.0),
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
                 primary: const Color.fromARGB(255, 123, 17, 17),
@@ -125,11 +139,11 @@ class LoginForm extends StatelessWidget {
                 if (_formKey.currentState!.validate()) {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => const Verify()),
+                    MaterialPageRoute(builder: (context) => const Home()),
                   );
                 }
               },
-              child: const Text('Next'),
+              child: const Text('Verify'),
             ),
           ),
         ],

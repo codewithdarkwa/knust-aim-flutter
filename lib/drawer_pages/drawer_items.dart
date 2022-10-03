@@ -57,6 +57,7 @@ class DrawerItems extends StatelessWidget {
           icon: Icons.person,
           page: LecturerAssessment(),
         ),
+        Divider(),
         CustomListTile(
           title: "Settings",
           icon: Icons.settings,
