@@ -23,28 +23,28 @@ class _LoginState extends State<Login> {
               children: [
                 Container(
                   width: screenWidth,
-                  height: screenHeight / 3,
+                  height: screenHeight / 3.5,
                   color: const Color.fromARGB(255, 123, 17, 17),
                 ),
                 Padding(
                   padding:
                       const EdgeInsets.symmetric(horizontal: 150, vertical: 20),
                   child: SizedBox(
-                    width: 150,
                     child: Image.asset('images/aim.png'),
                   ),
                 ),
-                const Positioned(
-                  top: 150,
+                Positioned(
+                  top: screenWidth * 0.35,
                   left: 150,
-                  child: CircleAvatar(
-                      backgroundImage: AssetImage('images/John.png'),
+                  child: const CircleAvatar(
+                      backgroundImage: AssetImage('images/avatar.jpg'),
                       radius: 60),
-                )
+                ),
               ],
             ),
             const Padding(
-              padding: EdgeInsets.all(25),
+              padding:
+                  EdgeInsets.only(left: 30, right: 30, top: 70, bottom: 30),
               child: TextField(
                 decoration: InputDecoration(
                   border: UnderlineInputBorder(),

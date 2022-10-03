@@ -23,28 +23,28 @@ class _ReferenceState extends State<Reference> {
               children: [
                 Container(
                   width: screenWidth,
-                  height: screenHeight / 3,
+                  height: screenHeight / 3.5,
                   color: const Color.fromARGB(255, 123, 17, 17),
                 ),
                 Padding(
                   padding:
                       const EdgeInsets.symmetric(horizontal: 150, vertical: 20),
                   child: SizedBox(
-                    width: 150,
                     child: Image.asset('images/aim.png'),
                   ),
                 ),
-                const Positioned(
-                  top: 150,
+                Positioned(
+                  top: screenWidth * 0.4,
                   left: 150,
-                  child: CircleAvatar(
+                  child: const CircleAvatar(
                       backgroundImage: AssetImage('images/John.png'),
                       radius: 60),
                 )
               ],
             ),
             Padding(
-              padding: const EdgeInsets.all(25),
+              padding: const EdgeInsets.only(
+                  left: 30, right: 30, top: 50, bottom: 30),
               child: Column(
                 children: const [
                   TextField(
@@ -78,32 +78,32 @@ class _ReferenceState extends State<Reference> {
               },
               child: const Text('Verify'),
             ),
-            Expanded(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.end,
-                children: const [
-                  CircleAvatar(
-                    backgroundImage: AssetImage('images/results.png'),
-                  ),
-                  CircleAvatar(
-                    backgroundImage: AssetImage('images/notification.png'),
-                  ),
-                  CircleAvatar(
-                    backgroundImage: AssetImage('images/fees.png'),
-                  ),
-                  CircleAvatar(
-                    backgroundImage: AssetImage('images/profile.png'),
-                  ),
-                  CircleAvatar(
-                    backgroundImage: AssetImage('images/registration.png'),
-                  ),
-                  CircleAvatar(
-                    backgroundImage: AssetImage('images/slip.png'),
-                  ),
-                ],
-              ),
-            ),
+            // Expanded(
+            //   child: Row(
+            //     mainAxisAlignment: MainAxisAlignment.center,
+            //     crossAxisAlignment: CrossAxisAlignment.end,
+            //     children: const [
+            //       CircleAvatar(
+            //         backgroundImage: AssetImage('images/results.png'),
+            //       ),
+            //       CircleAvatar(
+            //         backgroundImage: AssetImage('images/notification.png'),
+            //       ),
+            //       CircleAvatar(
+            //         backgroundImage: AssetImage('images/fees.png'),
+            //       ),
+            //       CircleAvatar(
+            //         backgroundImage: AssetImage('images/profile.png'),
+            //       ),
+            //       CircleAvatar(
+            //         backgroundImage: AssetImage('images/registration.png'),
+            //       ),
+            //       CircleAvatar(
+            //         backgroundImage: AssetImage('images/slip.png'),
+            //       ),
+            //     ],
+            //   ),
+            // ),
           ],
         ),
       ),
