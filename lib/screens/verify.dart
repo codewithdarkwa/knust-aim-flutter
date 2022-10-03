@@ -15,7 +15,14 @@ class _VerifyState extends State<Verify> {
   Widget build(BuildContext context) {
     double screenHeight = MediaQuery.of(context).size.height;
     double screenWidth = MediaQuery.of(context).size.width;
-
+    List avatar = [
+      const AssetImage('images/results.png'),
+      const AssetImage('images/notification.png'),
+      const AssetImage('images/fees.png'),
+      const AssetImage('images/profile.png'),
+      const AssetImage('images/registration.png'),
+      const AssetImage('images/slip.png'),
+    ];
     return Scaffold(
       body: SafeArea(
         child: Column(
@@ -56,26 +63,15 @@ class _VerifyState extends State<Verify> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.end,
-                children: const [
-                  CircleAvatar(
-                    backgroundImage: AssetImage('images/results.png'),
-                  ),
-                  CircleAvatar(
-                    backgroundImage: AssetImage('images/notification.png'),
-                  ),
-                  CircleAvatar(
-                    backgroundImage: AssetImage('images/fees.png'),
-                  ),
-                  CircleAvatar(
-                    backgroundImage: AssetImage('images/profile.png'),
-                  ),
-                  CircleAvatar(
-                    backgroundImage: AssetImage('images/registration.png'),
-                  ),
-                  CircleAvatar(
-                    backgroundImage: AssetImage('images/slip.png'),
-                  ),
-                ],
+                children: List.generate(avatar.length, (index) {
+                  return Row(
+                    children: [
+                      CircleAvatar(
+                        backgroundImage: avatar[index],
+                      ),
+                    ],
+                  );
+                }),
               ),
             ),
           ],
