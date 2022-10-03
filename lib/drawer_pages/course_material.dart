@@ -12,29 +12,31 @@ class CourseMaterial extends StatelessWidget {
         backgroundColor: const Color.fromARGB(255, 123, 17, 17),
       ),
       body: SafeArea(
-        child: ListView(children: const [
-          Padding(
-            padding: EdgeInsets.all(12.0),
-            child: Text(
-              'Select a course to view related files',
-              style: TextStyle(
-                fontSize: 17,
-                color: Colors.grey,
+        child: ListView(
+          children: const [
+            Padding(
+              padding: EdgeInsets.all(12.0),
+              child: Text(
+                'Select a course to view related files',
+                style: TextStyle(
+                  fontSize: 17,
+                  color: Colors.grey,
+                ),
               ),
             ),
-          ),
-          Divider(),
-          Course(coursetitle: "Econ 152 ELEMENTS OF ECONOMICS II"),
-          Course(coursetitle: "CSM 158 PROGRAMMING WITH C++"),
-          Course(coursetitle: "Math 162 INTRODUCTION PURE MATHEMATICS"),
-          Course(
-              coursetitle:
-                  "MATH 166 INTRODUCTION TO PROBABILITY AND STATISTICS"),
-          Course(coursetitle: "CSM 166 DISCRETE MATHEMATICS"),
-          Course(coursetitle: "CSM 152 INFORMATION TECHNOLOGY II"),
-          Course(coursetitle: "CSM 166 DISCRETE MATHEMATICS II"),
-          Course(coursetitle: "COMUNICATION SKILLS"),
-        ]),
+            Divider(),
+            Course(coursetitle: "Econ 152 ELEMENTS OF ECONOMICS II"),
+            Course(coursetitle: "CSM 158 PROGRAMMING WITH C++"),
+            Course(coursetitle: "Math 162 INTRODUCTION PURE MATHEMATICS"),
+            Course(
+                coursetitle:
+                    "MATH 166 INTRODUCTION TO PROBABILITY AND STATISTICS"),
+            Course(coursetitle: "CSM 166 DISCRETE MATHEMATICS"),
+            Course(coursetitle: "CSM 152 INFORMATION TECHNOLOGY II"),
+            Course(coursetitle: "CSM 166 DISCRETE MATHEMATICS II"),
+            Course(coursetitle: "COMUNICATION SKILLS"),
+          ],
+        ),
       ),
     );
   }
